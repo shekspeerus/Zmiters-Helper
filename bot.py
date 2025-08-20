@@ -5,7 +5,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler
 
 from commands import post_init
-from handlers import start, build_conversation_handler, language
+from handlers import start, build_conversation_handler, language, about
 
 
 load_dotenv()
@@ -31,6 +31,7 @@ def main() -> None:
     application.add_handler(CommandHandler("start", start))
     application.add_handler(build_conversation_handler())
     application.add_handler(CommandHandler("language", language))
+    application.add_handler(CommandHandler("about", about))
 
     logger.info("бот запушчаны...")
     application.run_polling(allowed_updates=Update.ALL_TYPES)
