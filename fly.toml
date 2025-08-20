@@ -1,0 +1,14 @@
+# fly.toml app configuration file generated for zmiters-helper on 2025-08-20T17:38:53+03:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'zmiters-helper'
+primary_region = 'waw'
+
+[build]
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
